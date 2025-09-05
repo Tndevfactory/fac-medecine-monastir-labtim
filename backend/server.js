@@ -212,16 +212,20 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-initializeDB()
-  .then(() => {
-    // THIS IS THE CRITICAL LINE FOR BACKEND ACCESSIBILITY
-    app.listen(PORT, () =>
-      console.log(`Server running on http://localhost:${PORT}`)
-    );
-  })
-  .catch((err) => {
-    console.error(
-      "Failed to initialize database and start server due to a fatal error:",
-      err
-    );
-  });
+// initializeDB()
+//   .then(() => {
+//     // THIS IS THE CRITICAL LINE FOR BACKEND ACCESSIBILITY
+//     app.listen(PORT, () =>
+//       console.log(`Server running on http://localhost:${PORT}`)
+//     );
+//   })
+//   .catch((err) => {
+//     console.error(
+//       "Failed to initialize database and start server due to a fatal error:",
+//       err
+//     );
+//   });
+
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`)
+);
